@@ -4,5 +4,12 @@
     //類別   名稱
 public class LearnCSharp : MonoBehaviour
 {
-   
+    private void Start()
+    {
+        print("c9 ~");
+    }
+    private void Update()
+    {
+        print("XDXDXD");
+    }
 }
