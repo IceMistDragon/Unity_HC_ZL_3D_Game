@@ -18,6 +18,17 @@ public class LeamStatin : MonoBehaviour
 
         print(Random.Range(0.1f, 99.9f));
         print(Random.Range(100f, 500f));
+
+        //練習一//靜態成員-取得數學 PI 3.14159:Mathf(Math Function)
+
+        print(Mathf.PI);
+
+        //練習二//靜態方法-數學.絕對值 -999:Mathf
+
+        print(Mathf.Abs(-999f));
+        //camera
+       
+
     }
     //面板
     public int score = 10;
@@ -25,5 +36,15 @@ public class LeamStatin : MonoBehaviour
     private int speen = 99;
 
     //
+
+    public Camera cam;
+
+    private void Start()
+    {
+        print("攝影機數量:" + Camera.allCamerasCount);
+
+        print(cam.depth);
+    }
+
 
 }
