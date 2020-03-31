@@ -10,8 +10,8 @@ public class LeamStatin : MonoBehaviour
         bool c = true;
         bool d = false;
         string e = "我是字串";
-        
-    
+
+
         print(Random.value);
 
         Time.timeScale = 0.5f;
@@ -27,24 +27,13 @@ public class LeamStatin : MonoBehaviour
 
         print(Mathf.Abs(-999f));
         //camera
-       
+
 
     }
     //面板
-    public int score = 10;
+     public int score = 10;
 
-    private int speen = 99;
+     private int speen = 99;
 
     //
-
-    public Camera cam;
-
-    private void Start()
-    {
-        print("攝影機數量:" + Camera.allCamerasCount);
-
-        print(cam.depth);
-    }
-
-
 }
