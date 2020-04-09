@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\LeamField.cs" />
     <Compile Include="Assets\Scripts\LeamStatin.cs" />
     <Compile Include="Assets\Scripts\LearnCSharp.cs" />
+    <Compile Include="Assets\Scripts\MenuManager.cs" />
     <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
     <None Include="Assets\3DVoxel_Free\YukataGirl\readme_en.txt" />
     <None Include="Assets\3DVoxel_Free\YukataGirl\readme_jp.txt" />
