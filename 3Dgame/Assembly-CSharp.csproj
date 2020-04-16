@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\Dragon.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyManage.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\LeamField.cs" />
     <Compile Include="Assets\Scripts\LeamStatin.cs" />
     <Compile Include="Assets\Scripts\LearnCSharp.cs" />

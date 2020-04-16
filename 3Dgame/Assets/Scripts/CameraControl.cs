@@ -12,7 +12,7 @@ public class CameraControl : MonoBehaviour
     {
         Vector3 draPos = dragon.position;
         draPos.y = 50;
-        draPos.z -= 10;
+        draPos.z -= 14;
         transform.position = Vector3.Lerp(transform.position, draPos, 0.3f);
     }
 
