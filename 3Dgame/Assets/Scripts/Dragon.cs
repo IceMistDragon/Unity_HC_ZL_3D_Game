@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Dragon : MonoBehaviour
@@ -17,6 +18,10 @@ public class Dragon : MonoBehaviour
     public float speedFireBall = 300;
     [Header("攻擊力"), Range(1, 10000)]
     public float attack = 100;
+    [Header("血量"), Range(1, 10000)]
+    public float hp = 100;
+    [Header("血條")]
+    public Image hpBar;
 
 
     /// <summary>
@@ -87,10 +92,34 @@ public class Dragon : MonoBehaviour
         temp.GetComponent<Rigidbody>().AddForce(0, 0, speedFireBall);
     }
 
+    /// <summary>
+    /// 吃掉加速藥水
+    /// </summary>
+    private void EatPropCd()
+    {
+        cd -= 0.5f;
+        cd = Mathf.Clamp(cd, 0.3f, 100);
+    }
+
+    /// <summary>
+    /// 吃掉補血藥水
+    /// </summary>
+    private void EatPropHp()
+    {
+        //hp += 20;
+        //hp = Mathf.Clamp(hp, 0, 120);
+    }
+
+    private IEnumerator HpBarEffect()
+    {
+        ?????
+    }
+
     private void Start()
     {
         // 取得元件<泛型>()
         ani = GetComponent<Animator>();
+        hpBar.fillAmount = hp / 100;
     }
 
     private void Update()
@@ -98,4 +127,19 @@ public class Dragon : MonoBehaviour
         Move();
         Attack();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "加速藥水")
+        {
+            EatPropCd();
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "補血藥水")
+        {
+            EatPropHp();
+            Destroy(other.gameObject);
+        }
+    }
+
 }
