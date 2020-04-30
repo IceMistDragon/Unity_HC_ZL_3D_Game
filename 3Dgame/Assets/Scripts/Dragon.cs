@@ -89,7 +89,12 @@ public class Dragon : MonoBehaviour
 
         temp.AddComponent<Ball>();                 //暫存火球.添加元件<球>()
         temp.GetComponent<Ball>().damage = attack; //暫存火球.取得元件<球>() .傷害值 = 攻擊力                
-        temp.GetComponent<Rigidbody>().AddForce(0, 0, speedFireBall);
+        temp.GetComponent<Ball>().type = "玩家";
+
+
+        temp.GetComponent<Rigidbody>().AddForce(0, 0, speedFireBall);  //火球前進
+
+
     }
 
     /// <summary>
@@ -108,11 +113,43 @@ public class Dragon : MonoBehaviour
     {
         //hp += 20;
         //hp = Mathf.Clamp(hp, 0, 120);
+        StartCoroutine(HpBarEffect());
     }
 
+    /// <summary>
+    /// 血條增加特效
+    /// </summary>
     private IEnumerator HpBarEffect()
     {
-        ?????
+        float hpAdd = hp + 20;
+
+        while (hp < hpAdd)
+        {
+            hp++;
+            hp = Mathf.Clamp(hp, 0, 100);
+            hpBar.fillAmount = hp / 100;
+            yield return null;             //null 一禎
+        }
+    }
+
+
+    /// <summary>
+    /// 受傷
+    /// </summary>
+    /// <param name="damage">接收傷害值</param>
+    public void Damage(float damage)
+    {
+        hp -= damage;
+        hpBar.fillAmount = hp / 100;
+        if (hp <= 0) Dead();
+    }
+
+    /// <summary>
+    /// 死亡
+    /// </summary>
+    private void Dead()
+    {
+        ani.SetBool("死亡", true);
     }
 
     private void Start()
@@ -124,6 +161,7 @@ public class Dragon : MonoBehaviour
 
     private void Update()
     {
+        if (ani.GetBool("死亡")) return;
         Move();
         Attack();
     }

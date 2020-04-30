@@ -8,14 +8,22 @@ public class Monster : MonoBehaviour
     public GameObject propHP;
     [Header("加速藥水")]
     public GameObject propcd;
+    [Header("發射物件")]
+    public GameObject bullet;
 
     private Animator ani;
     private float hp;
+    private float timer;        //j計時器
 
     private void Start()
     {
         hp = Data.hp;
         ani = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        Attaack();
     }
 
     //private void Start()
@@ -58,4 +66,24 @@ public class Monster : MonoBehaviour
         //print("掉落補血藥機率:" + rHP);
 
     }
+
+    /// <summary>
+    /// 發射物件
+    /// </summary>
+    private void Attaack()
+    {
+        timer += Time.deltaTime;
+
+        if (timer >= Data.cd)
+        {
+            timer = 0;
+            GameObject temp = Instantiate(bullet, transform.position + transform.forward, Quaternion.identity);
+            temp.AddComponent<Move>().speed = Data.bulletSpeed;
+            temp.AddComponent<Ball>().damage = Data.attack;
+            temp.GetComponent<Ball>().type = "怪物";
+
+        }
+
+    }
+
 }
