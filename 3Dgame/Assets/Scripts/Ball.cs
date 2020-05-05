@@ -16,7 +16,7 @@ public class Ball : MonoBehaviour
             other.GetComponent<Monster>().Damage(damage);
             Destroy(gameObject);
         }
-        if (other.name == "女巫")
+        if (other.name == "玩家")
         {
             other.GetComponent<Monster>().Damage(damage);
             Destroy(gameObject);

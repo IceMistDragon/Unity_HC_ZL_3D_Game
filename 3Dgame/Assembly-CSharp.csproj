@@ -92,6 +92,8 @@
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\MonsterData.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
+    <Compile Include="Assets\Scripts\SpawnData.cs" />
+    <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
     <None Include="Assets\3DVoxel_Free\YukataGirl\readme_en.txt" />
     <None Include="Assets\3DVoxel_Free\YukataGirl\readme_jp.txt" />

@@ -80,7 +80,7 @@ public class Monster : MonoBehaviour
             GameObject temp = Instantiate(bullet, transform.position + transform.forward, Quaternion.identity);
             temp.AddComponent<Move>().speed = Data.bulletSpeed;
             temp.AddComponent<Ball>().damage = Data.attack;
-            temp.GetComponent<Ball>().type = "怪物";
+            temp.GetComponent<Ball>().type = "玩家";
 
         }
 
