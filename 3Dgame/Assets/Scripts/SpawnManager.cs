@@ -22,7 +22,7 @@ public class SpawnManager : MonoBehaviour
             for (int j = 0; j < data.spawn[i].monsters.Length; j++)
             {
                 //座標
-                Vector3 pos = new Vector3(data.spawn[i].monsters[j].x, 13, 50);
+                Vector3 pos = new Vector3(data.spawn[i].monsters[j].x, 30, 50);   //(X, Y, Z,)
                 //角度
                 Quaternion qua = Quaternion.Euler(0, 100, 0);
                 //生成

@@ -16,6 +16,7 @@ public class MonsterData : ScriptableObject
     [Header("攻擊冷卻"), Range(1, 10)]
     public float cd;
     [Header("子彈速度"), Range(1, 50)]
-    public float bulletSpeed;
+    public float bulletSpeedX ;
+    public float bulletSpeedZ ;
 
 }

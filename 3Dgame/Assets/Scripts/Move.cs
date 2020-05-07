@@ -7,8 +7,8 @@ public class Move : MonoBehaviour
 
     private void MoveMethod()
     {
-        transform.Translate(0,0, -speed * Time.deltaTime, Space.World);
-    }
+        transform.Translate(   0,   0,   -speed * Time.deltaTime, Space.World);
+    }                    //(X左右,Y上下,Z前後)
 
     private void Update()
     {

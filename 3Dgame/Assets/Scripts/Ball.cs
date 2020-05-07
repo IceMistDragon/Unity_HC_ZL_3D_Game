@@ -11,14 +11,14 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "怪物")
+        if (other.tag == "怪物" && type == "玩家")
         {
             other.GetComponent<Monster>().Damage(damage);
             Destroy(gameObject);
         }
-        if (other.name == "玩家")
+        if (other.name == "女巫" && type == "怪物")
         {
-            other.GetComponent<Monster>().Damage(damage);
+            other.GetComponent<Dragon>().Damage(damage);
             Destroy(gameObject);
         }
     }

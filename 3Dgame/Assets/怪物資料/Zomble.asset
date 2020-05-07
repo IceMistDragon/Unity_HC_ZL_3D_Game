@@ -17,5 +17,6 @@ MonoBehaviour:
   speed: 1
   propHP: 0.3
   propCD: 0.1
-  cd: 2
-  bulletSpeed: 1
+  cd: 5
+  bulletSpeedX: 1
+  bulletSpeedZ: 10
