@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Zomble
   m_EditorClassIdentifier: 
   hp: 100
-  attack: 10
+  attack: 50
   speed: 1
   propHP: 0.3
+  propCD: 0.1
+  cd: 2
+  bulletSpeed: 1
